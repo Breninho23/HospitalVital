@@ -1,9 +1,6 @@
 package hospital.vital.api.controller;
 
-import hospital.vital.api.medico.DadosCadastroMedico;
-import hospital.vital.api.medico.DadosListagemMedico;
-import hospital.vital.api.medico.Medico;
-import hospital.vital.api.medico.MedicoRepository;
+import hospital.vital.api.medico.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -34,5 +31,12 @@ public class MedicoController {
     public Page<DadosListagemMedico> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao){
         //return repository.findAll(paginacao).stream().map(DadosListagemMedico::new).toList();
         return repository.findAll(paginacao).map(DadosListagemMedico::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosAtualizacaoMedico dados){
+        var medico = repository.getReferenceById(dados.id());
+        medico.atualizarInformacoes(dados);
     }
 }
