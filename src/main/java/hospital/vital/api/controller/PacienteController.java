@@ -1,8 +1,8 @@
 package hospital.vital.api.controller;
 
-import hospital.vital.api.medico.DadosCadastroMedico;
-import hospital.vital.api.medico.Medico;
-import hospital.vital.api.medico.MedicoRepository;
+import hospital.vital.api.paciente.DadosCadastroPaciente;
+import hospital.vital.api.paciente.Paciente;
+import hospital.vital.api.paciente.PacitenteRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,15 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Breno
  */
 @RestController
-@RequestMapping("medicos")
-public class MedicoController {
+@RequestMapping("pacientes")
+public class PacienteController {
 
     @Autowired
-    private MedicoRepository repository;
+    private PacitenteRepository repository;
 
     @PostMapping
     @Transactional
-    public void cadastrar(@RequestBody @Valid DadosCadastroMedico dados){
-        repository.save(new Medico(dados));
+    public void cadastrar(@RequestBody @Valid DadosCadastroPaciente dados) {
+        repository.save(new Paciente(dados));
     }
 }
+
