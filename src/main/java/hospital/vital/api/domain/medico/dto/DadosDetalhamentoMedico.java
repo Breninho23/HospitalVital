@@ -1,8 +1,8 @@
-package hospital.vital.api.medico.dto;
+package hospital.vital.api.domain.medico.dto;
 
-import hospital.vital.api.endereco.Endereco;
-import hospital.vital.api.medico.enums.Especialidade;
-import hospital.vital.api.medico.Medico;
+import hospital.vital.api.domain.medico.Medico;
+import hospital.vital.api.domain.medico.enums.Especialidade;
+import hospital.vital.api.domain.endereco.Endereco;
 
 /**
  * @author Breno

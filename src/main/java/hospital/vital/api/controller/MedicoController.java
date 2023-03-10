@@ -1,10 +1,11 @@
 package hospital.vital.api.controller;
 
-import hospital.vital.api.medico.*;
-import hospital.vital.api.medico.dto.DadosAtualizacaoMedico;
-import hospital.vital.api.medico.dto.DadosCadastroMedico;
-import hospital.vital.api.medico.dto.DadosDetalhamentoMedico;
-import hospital.vital.api.medico.dto.DadosListagemMedico;
+import hospital.vital.api.domain.medico.Medico;
+import hospital.vital.api.domain.medico.MedicoRepository;
+import hospital.vital.api.domain.medico.dto.DadosAtualizacaoMedico;
+import hospital.vital.api.domain.medico.dto.DadosCadastroMedico;
+import hospital.vital.api.domain.medico.dto.DadosDetalhamentoMedico;
+import hospital.vital.api.domain.medico.dto.DadosListagemMedico;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

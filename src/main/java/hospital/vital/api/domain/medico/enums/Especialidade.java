@@ -1,4 +1,4 @@
-package hospital.vital.api.medico.enums;
+package hospital.vital.api.domain.medico.enums;
 
 /**
  * @author Breno

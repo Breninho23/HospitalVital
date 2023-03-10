@@ -1,6 +1,6 @@
-package hospital.vital.api.endereco;
+package hospital.vital.api.domain.endereco;
 
-import hospital.vital.api.endereco.dto.DadosEndereco;
+import hospital.vital.api.domain.endereco.dto.DadosEndereco;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

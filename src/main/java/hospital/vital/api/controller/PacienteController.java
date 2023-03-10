@@ -1,8 +1,8 @@
 package hospital.vital.api.controller;
 
-import hospital.vital.api.paciente.DadosCadastroPaciente;
-import hospital.vital.api.paciente.Paciente;
-import hospital.vital.api.paciente.PacitenteRepository;
+import hospital.vital.api.domain.paciente.DadosCadastroPaciente;
+import hospital.vital.api.domain.paciente.Paciente;
+import hospital.vital.api.domain.paciente.PacitenteRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;

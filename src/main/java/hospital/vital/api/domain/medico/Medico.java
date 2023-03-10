@@ -1,9 +1,9 @@
-package hospital.vital.api.medico;
+package hospital.vital.api.domain.medico;
 
-import hospital.vital.api.endereco.Endereco;
-import hospital.vital.api.medico.dto.DadosAtualizacaoMedico;
-import hospital.vital.api.medico.dto.DadosCadastroMedico;
-import hospital.vital.api.medico.enums.Especialidade;
+import hospital.vital.api.domain.medico.dto.DadosCadastroMedico;
+import hospital.vital.api.domain.endereco.Endereco;
+import hospital.vital.api.domain.medico.dto.DadosAtualizacaoMedico;
+import hospital.vital.api.domain.medico.enums.Especialidade;
 import jakarta.persistence.*;
 import lombok.*;
 

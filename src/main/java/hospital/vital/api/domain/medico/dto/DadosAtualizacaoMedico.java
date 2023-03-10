@@ -1,6 +1,6 @@
-package hospital.vital.api.medico.dto;
+package hospital.vital.api.domain.medico.dto;
 
-import hospital.vital.api.endereco.dto.DadosEndereco;
+import hospital.vital.api.domain.endereco.dto.DadosEndereco;
 
 /**
  * @author Breno

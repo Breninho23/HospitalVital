@@ -1,6 +1,6 @@
-package hospital.vital.api.paciente;
+package hospital.vital.api.domain.paciente;
 
-import hospital.vital.api.endereco.Endereco;
+import hospital.vital.api.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
