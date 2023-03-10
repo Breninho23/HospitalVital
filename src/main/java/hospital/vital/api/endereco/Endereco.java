@@ -1,10 +1,10 @@
 package hospital.vital.api.endereco;
 
+import hospital.vital.api.endereco.dto.DadosEndereco;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 /**
  * @author Breno

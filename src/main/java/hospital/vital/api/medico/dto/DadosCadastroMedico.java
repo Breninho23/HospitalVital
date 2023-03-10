@@ -1,7 +1,8 @@
-package hospital.vital.api.medico;
+package hospital.vital.api.medico.dto;
 
-import hospital.vital.api.endereco.DadosEndereco;
+import hospital.vital.api.endereco.dto.DadosEndereco;
 
+import hospital.vital.api.medico.enums.Especialidade;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

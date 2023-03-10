@@ -1,4 +1,4 @@
-package hospital.vital.api.endereco;
+package hospital.vital.api.endereco.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

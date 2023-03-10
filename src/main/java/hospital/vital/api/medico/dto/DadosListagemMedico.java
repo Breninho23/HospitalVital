@@ -1,4 +1,7 @@
-package hospital.vital.api.medico;
+package hospital.vital.api.medico.dto;
+
+import hospital.vital.api.medico.enums.Especialidade;
+import hospital.vital.api.medico.Medico;
 
 /**
  * @author Breno

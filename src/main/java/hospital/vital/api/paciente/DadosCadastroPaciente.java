@@ -1,6 +1,6 @@
 package hospital.vital.api.paciente;
 
-import hospital.vital.api.endereco.DadosEndereco;
+import hospital.vital.api.endereco.dto.DadosEndereco;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
