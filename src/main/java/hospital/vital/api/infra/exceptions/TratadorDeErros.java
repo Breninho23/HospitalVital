@@ -1,4 +1,4 @@
-package hospital.vital.api.infra;
+package hospital.vital.api.infra.exceptions;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
