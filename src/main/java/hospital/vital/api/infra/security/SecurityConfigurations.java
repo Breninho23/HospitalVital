@@ -22,6 +22,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class SecurityConfigurations {
     //Ao criar essa configuração ele desabilita o formulário de login e senha para poder fazer requisições da aplicação
+    //Adicionar a seguinte anotação caso na classe de segurança caso eu queira fazer a checagem de segurança como o shiro faz
+    //Encima dos metodos de requisição eu adiciona a role necessaria @Secured("ROLE_ADMIN")
+    //@EnableMethodSecurity(securedEnabled = true)
 
     @Autowired
     private SecurityFilter securityFilter;
@@ -29,6 +32,10 @@ public class SecurityConfigurations {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         //CSRF Cross-Site Request Forgery
         //sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) é para indicar que eu estou usando autenticação Stateless
+        //Exemplo para bloquear requisição caso o usuário não tenha permissão
+        //.requestMatchers(HttpMethod.DELETE, "/medicos").hasRole("ADMIN")
+        //.requestMatchers(HttpMethod.DELETE, "/pacientes").hasRole("ADMIN")
+
         return http.csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().authorizeHttpRequests()
