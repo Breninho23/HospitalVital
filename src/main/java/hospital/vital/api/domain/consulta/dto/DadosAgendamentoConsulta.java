@@ -1,5 +1,6 @@
 package hospital.vital.api.domain.consulta.dto;
 
+import hospital.vital.api.domain.medico.enums.Especialidade;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
 
@@ -14,5 +15,7 @@ public record DadosAgendamentoConsulta(Long idMedico,
                                        Long idPaciente,
                                        @NotNull
                                        @Future
-                                       LocalDateTime date) {
+                                       LocalDateTime data,
+
+                                       Especialidade especialidade) {
 }
