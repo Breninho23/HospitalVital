@@ -1,4 +1,5 @@
 package hospital.vital.api.infra.exceptions;
+import hospital.vital.api.domain.ValidacaoExecepition;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -27,5 +28,10 @@ public class TratadorDeErros {
         public DadosErroValidacao (FieldError erro){
             this(erro.getField(), erro.getDefaultMessage());
         }
+    }
+
+    @ExceptionHandler(ValidacaoExecepition.class)
+    public ResponseEntity tratarErroRegraDeNegocio(ValidacaoExecepition ex){
+        return ResponseEntity.badRequest().body(ex.getMessage());
     }
 }

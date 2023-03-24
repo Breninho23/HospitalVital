@@ -2,17 +2,20 @@ package hospital.vital.api.domain.consulta.validacoes;
 
 import hospital.vital.api.domain.ValidacaoExecepition;
 import hospital.vital.api.domain.consulta.dto.DadosAgendamentoConsulta;
+import org.springframework.stereotype.Component;
 
 import java.time.DayOfWeek;
 
 /**
  * @author Breno
  */
-public class ValidacaoHorarioFuncionamentoClinica {
 
-    public void validar (DadosAgendamentoConsulta dadosAgendamentoConsulta){
+@Component
+public class ValidacaoHorarioFuncionamentoClinica implements ValidadorAgendamentoConsulta {
 
-        var dataConsulta = dadosAgendamentoConsulta.data();
+    public void validar (DadosAgendamentoConsulta dados){
+
+        var dataConsulta = dados.data();
 
         var domingo = dataConsulta.getDayOfWeek().equals(DayOfWeek.SUNDAY);
         var antesDaAberturaDaClinica = dataConsulta.getHour() < 7;

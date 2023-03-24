@@ -3,12 +3,17 @@ package hospital.vital.api.domain.consulta.validacoes;
 import hospital.vital.api.domain.ValidacaoExecepition;
 import hospital.vital.api.domain.consulta.ConsultaRepository;
 import hospital.vital.api.domain.consulta.dto.DadosAgendamentoConsulta;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Breno
  */
-public class ValidadorMedicoComOutraConsultaNoMesmoHorario {
 
+@Component
+public class ValidadorMedicoComOutraConsultaNoMesmoHorario implements ValidadorAgendamentoConsulta {
+
+    @Autowired
     private ConsultaRepository repository;
 
     public void validar(DadosAgendamentoConsulta dados){

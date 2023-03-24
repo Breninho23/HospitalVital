@@ -2,11 +2,15 @@ package hospital.vital.api.domain.consulta;
 
 import hospital.vital.api.domain.ValidacaoExecepition;
 import hospital.vital.api.domain.consulta.dto.DadosAgendamentoConsulta;
+import hospital.vital.api.domain.consulta.dto.DadosDetalhamentoConsulta;
+import hospital.vital.api.domain.consulta.validacoes.ValidadorAgendamentoConsulta;
 import hospital.vital.api.domain.medico.Medico;
 import hospital.vital.api.domain.medico.MedicoRepository;
 import hospital.vital.api.domain.paciente.PacitenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author Breno
@@ -23,7 +27,10 @@ public class AgendaDeConsultas {
     @Autowired
     private PacitenteRepository pacitenteRepository;
 
-    public void agendar(DadosAgendamentoConsulta dados){
+    @Autowired
+    private List<ValidadorAgendamentoConsulta> validadores;
+
+    public DadosDetalhamentoConsulta agendar(DadosAgendamentoConsulta dados){
         if(!pacitenteRepository.existsById(dados.idPaciente())){
             throw new ValidacaoExecepition("Id do paciente informado não existe");
         }
@@ -32,13 +39,22 @@ public class AgendaDeConsultas {
             throw new ValidacaoExecepition("Id do médico informado não existe");
         }
 
-        //validacoes
+        //Principios de SOLID estamos aplicando S, O e D
+        //Single Responsability Principle
+        //Open-Closed Principle
+        //Dependency Inversion Principle
+        validadores.forEach(v -> v.validar(dados));
 
         var paciente = pacitenteRepository.findById(dados.idPaciente()).get();
-        var medico = medicoRepository.findById(dados.idMedico()).get();
+        var medico = escolherMedico(dados);
+        if(medico == null){
+            throw new ValidacaoExecepition("Não existe médico disponível nessa data");
+        }
+
         var consulta = new Consulta(null, medico, paciente, dados.data());
 
         consultaRepository.save(consulta);
+        return new DadosDetalhamentoConsulta(consulta);
     }
 
     private Medico escolherMedico(DadosAgendamentoConsulta dados){

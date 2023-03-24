@@ -2,6 +2,7 @@ package hospital.vital.api.domain.consulta.validacoes;
 
 import hospital.vital.api.domain.ValidacaoExecepition;
 import hospital.vital.api.domain.consulta.dto.DadosAgendamentoConsulta;
+import org.springframework.stereotype.Component;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -9,7 +10,9 @@ import java.time.LocalDateTime;
 /**
  * @author Breno
  */
-public class ValidacaoHorarioAntecedencia {
+
+@Component
+public class ValidacaoHorarioAntecedencia implements ValidadorAgendamentoConsulta{
 
     public void validar (DadosAgendamentoConsulta dados){
         var dataConsulta = dados.data();
