@@ -1,6 +1,6 @@
 package hospital.vital.api.controller;
 
-import hospital.vital.api.domain.paciente.DadosCadastroPaciente;
+import hospital.vital.api.domain.paciente.dto.DadosCadastroPaciente;
 import hospital.vital.api.domain.paciente.Paciente;
 import hospital.vital.api.domain.paciente.PacitenteRepository;
 import jakarta.validation.Valid;

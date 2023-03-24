@@ -1,4 +1,4 @@
-package hospital.vital.api.domain.paciente;
+package hospital.vital.api.domain.paciente.dto;
 
 import hospital.vital.api.domain.endereco.dto.DadosEndereco;
 import jakarta.validation.Valid;

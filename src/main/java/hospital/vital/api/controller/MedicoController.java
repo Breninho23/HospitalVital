@@ -8,6 +8,7 @@ import hospital.vital.api.domain.medico.dto.DadosDetalhamentoMedico;
 import hospital.vital.api.domain.medico.dto.DadosListagemMedico;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Role;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
