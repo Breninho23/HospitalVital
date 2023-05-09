@@ -3,6 +3,7 @@ package hospital.vital.api.controller;
 import hospital.vital.api.domain.consulta.AgendaDeConsultas;
 import hospital.vital.api.domain.consulta.dto.DadosAgendamentoConsulta;
 import hospital.vital.api.domain.consulta.dto.DadosDetalhamentoConsulta;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("consultas")
+@SecurityRequirement(name = "bearer-key")
 public class ConsultaController {
 
     @Autowired

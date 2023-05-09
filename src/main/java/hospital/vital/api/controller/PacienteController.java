@@ -3,6 +3,7 @@ package hospital.vital.api.controller;
 import hospital.vital.api.domain.paciente.dto.DadosCadastroPaciente;
 import hospital.vital.api.domain.paciente.Paciente;
 import hospital.vital.api.domain.paciente.PacitenteRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("pacientes")
+@SecurityRequirement(name = "bearer-key")
 public class PacienteController {
 
     @Autowired

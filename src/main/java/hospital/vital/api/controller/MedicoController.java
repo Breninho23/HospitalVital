@@ -6,6 +6,7 @@ import hospital.vital.api.domain.medico.dto.DadosAtualizacaoMedico;
 import hospital.vital.api.domain.medico.dto.DadosCadastroMedico;
 import hospital.vital.api.domain.medico.dto.DadosDetalhamentoMedico;
 import hospital.vital.api.domain.medico.dto.DadosListagemMedico;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Role;
@@ -22,6 +23,7 @@ import org.springframework.web.util.UriComponentsBuilder;
  */
 @RestController
 @RequestMapping("medicos")
+@SecurityRequirement(name = "bearer-key")
 public class MedicoController {
 
     @Autowired
